@@ -34,6 +34,11 @@ $c = (isset($_GET['c']) ? $_GET['c'] : null);
             {
                 echo "<h1>Isosceles Triangle</h1>";
             }
+            else if((($a**2+$b**2)==$c**2) || 
+					(($c**2+$b**2)==$a**2) || 
+					(($a**2+$c**2)==$b**2) ){
+				echo "<h1>Triangle is Right Angled</h1>";
+			}
             else
             {
                 echo "<h1>Scalene Triangle</h1>";
