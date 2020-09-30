@@ -10,9 +10,12 @@
 Enter A Character<input type="text" name="ch"/><br/>
 <input type="submit"/>
 <hr/>
+
 </form>
 </body>
 </html>
+
+
 <?php
 
 if(isset($_GET['ch'])){
