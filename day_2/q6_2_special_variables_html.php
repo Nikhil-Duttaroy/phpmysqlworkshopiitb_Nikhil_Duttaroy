@@ -37,7 +37,7 @@ $Subject5 = (isset($_GET['Subject5']) ? $_GET['Subject5'] : null);
 
 if(!empty($name || $Subject1 || $Subject2 || $Subject3 || $Subject4 || $Subject5))
 {   
-    if(is_numeric($Subject1) && is_numeric($Subject2) && is_numeric($Subject3) && is_numeric($Subject4) && is_numeric($Subject5) )
+    if(is_numeric($Subject1) && is_numeric($Subject2) && is_numeric($Subject3) && is_numeric($Subject4) && is_numeric($Subject5) && $Subject1<=100 && $Subject2<=100 && $Subject3<=100 && $Subject4<=100 && $Subject5<=100 )
     {
         echo "Name of Student : " ,$name;
         echo "<br>";
@@ -63,7 +63,7 @@ if(!empty($name || $Subject1 || $Subject2 || $Subject3 || $Subject4 || $Subject5
         echo "Percentage : ",$percentage;
     }    
     else{
-        echo "Enter Numeric Values for The Subject Marks";
+        echo "Enter Numeric Values less than 100 for The Subject Marks";
     }
 }
 else
