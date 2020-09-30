@@ -27,6 +27,7 @@ Subject 5 : <input type="text" name="Subject5"/><br/>
 </html>
 
 
+
 <?php
 $name = (isset($_GET['name']) ? $_GET['name'] : null);
 $Subject1 = (isset($_GET['Subject1']) ? $_GET['Subject1'] : null);
