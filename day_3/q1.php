@@ -8,8 +8,7 @@
 </head>
 <style>
     form input{
-        margin: 5px;
-        
+        margin: 5px;       
     }
 </style>
 <body>
@@ -24,12 +23,7 @@ Subject 5 : <input type="text" name="Subject5"/><br/>
 <input type="submit" name="submit"/>
 <hr/>
 <?php
-// $name = (isset($_GET['name']) ? $_GET['name'] : null);
-// $Subject1 = (isset($_GET['Subject1']) ? $_GET['Subject1'] : null);
-// $Subject2 = (isset($_GET['Subject2']) ? $_GET['Subject2'] : null);
-// $Subject3 = (isset($_GET['Subject3']) ? $_GET['Subject3'] : null);
-// $Subject4 = (isset($_GET['Subject4']) ? $_GET['Subject4'] : null);
-// $Subject5 = (isset($_GET['Subject5']) ? $_GET['Subject5'] : null);
+
 require ("connect.php");
 
 if(isset($_POST['submit']))
@@ -40,9 +34,7 @@ $Subject2 = (isset($_POST['Subject2']) ? $_POST['Subject2'] : null);
 $Subject3 = (isset($_POST['Subject3']) ? $_POST['Subject3'] : null);
 $Subject4 = (isset($_POST['Subject4']) ? $_POST['Subject4'] : null);
 $Subject5 = (isset($_POST['Subject5']) ? $_POST['Subject5'] : null);
-// $total = (isset($_POST['Subject3']) ? $_POST['Subject3'] : null);
-// $Subject4 = (isset($_POST['Subject4']) ? $_POST['Subject4'] : null);
-// $Subject5 = (isset($_POST['Subject5']) ? $_POST['Subject5'] : null);
+
 if(!empty($name || $Subject1 || $Subject2 || $Subject3 || $Subject4 || $Subject5))
 {   
     if(is_numeric($Subject1) && is_numeric($Subject2) && is_numeric($Subject3) && is_numeric($Subject4) && is_numeric($Subject5) && $Subject1<=100 && $Subject2<=100 && $Subject3<=100 && $Subject4<=100 && $Subject5<=100 )
@@ -91,9 +83,6 @@ else
 }
 
 }
-
-
-
 
 ?>
 </form>
