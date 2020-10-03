@@ -37,14 +37,14 @@
 
             $to=$email;
             $subject="Thank You";
-            $headers="From: duttaroyniksu18it@student.mes.ac.in";
+            $headers="From: nsdr2000@gmail.com";
             $body="Thank you for your Feedback  $name";
             mail($to,$subject,$body,$headers);
             
-            $admin="duttaroyniksu18it@student.mes.ac.in";
+            $admin="nsdr2000@gmail.com";
             $subjectadmin="$name Details";
             $headersadmin="From : $name ,$email";
-            $bodyadmin="Name : $name /n Email : $email /n Feedback : $message";
+            $bodyadmin="Name : ".$name."\n Email : ".$email."\n Feedback : ".$message;
             mail($admin,$subjectadmin,$bodyadmin,$headersadmin);     
             echo "Your Feedback has been sent";        
         }
