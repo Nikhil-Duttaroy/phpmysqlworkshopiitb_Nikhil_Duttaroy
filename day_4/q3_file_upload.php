@@ -13,9 +13,8 @@
     <input type="submit" value="submit">
     <hr/>
 <?php
-
-
-    
+    if(!empty($_FILES))
+    {
     $name= $_FILES["file"]["name"];
     $type= $_FILES["file"]["type"];
     $size= $_FILES["file"]["size"];
@@ -41,7 +40,8 @@
         echo "Upload complete!"; 
         }
     }
-
+    }
+    else echo "Please Upload a File";
 
 ?>    
 
