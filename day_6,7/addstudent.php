@@ -5,10 +5,9 @@ $error=null;
 $name=(isset($_POST['name']) ? $_POST['name'] : null );
 $email=(isset($_POST['email']) ? $_POST['email'] : null );
 $password=(isset($_POST['password']) ? $_POST['password'] : null );
-$password2=(isset($_POST['password2']) ? $_POST['password2'] : null );
 if(isset($_POST['submit'])){
  
-    if(!empty($name && $password && $email && $password2)){
+    if(!empty($name && $password && $email )){
 
         $compare = "SELECT * FROM students";//where email='$email'
         $result = mysqli_query($conn, $compare);
@@ -23,8 +22,8 @@ if(isset($_POST['submit'])){
                 }                          
             }
             if (filter_var($email, FILTER_VALIDATE_EMAIL)) { 
-                if($password === $password2){
                     $password=md5($password);
+                    
                     $sql="INSERT into students (name,password,email) VALUES('$name','$password','$email');";
                     $sql .= "INSERT INTO marks (student_id) SELECT MAX(id) FROM students";
                     
@@ -40,7 +39,7 @@ if(isset($_POST['submit'])){
                             /* print divider */
                             if (mysqli_more_results($conn)) {
                                 echo "<script type='text/javascript'>alert('New user Added');
-                                window.location='login.php';
+                                window.location='adminhome.php';
                                 </script>";
                             }
                         } while (mysqli_next_result($conn));
@@ -50,8 +49,6 @@ if(isset($_POST['submit'])){
                     }
                     mysqli_close($conn);
                     
-                }
-                    else $error="Passwords Don't match";
                 }
                 else $error="Please enter a valid email";           
         }
@@ -85,15 +82,13 @@ if(isset($_POST['submit'])){
         </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Registration Form</h1>
+    <h1 style="text-align: center;">Registration New Student</h1>
         <form action="" method="post">
         Username <input type="text" name="name" value="<?php echo $name?>"required>
         <br>
         Email <input type="email" name="email" value="<?php echo $email ?>" required>
         <br>
         Password <input type="password" name="password" value="<?php echo $password ?>" required>
-        <br>
-        ConfirmPassword <input type="password" name="password2" value="<?php echo $password2 ?>" required>
         <br>
         <input type="submit" name="submit" id="submit">
         </form>
